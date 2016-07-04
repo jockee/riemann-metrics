@@ -35,6 +35,7 @@ module Riemann
         }
         event[:description] = description if description
         client << event
+      rescue SocketError
       end
 
       def get_hostname
